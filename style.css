@@ -1,0 +1,81 @@
+.flexbox-container{
+    background-color: yellow;
+    display: flex;
+    
+    /* container properties are used mainly to set the positioning
+    and spacing between the items within the container.
+    */
+    
+    /* 
+    display: flex;This is how to create a flexbox container.
+    All items inside the container will show up in the same row (by default)
+    with same height. If we shrink the browser, the items will scale in width 
+    to fit within the browser
+    flex-direction: By default it is row;
+    flex-direction: column - all items inside the container will change to column layout.
+    you can use jutify-content: property to align to :flex-start, :flex-end, :space-between etc.
+    to align the contents within the column to top, bottom or equally spaced between vertically.
+    */
+    
+    /*justify-content: space-around;  
+    /* 
+    jutify-content - for aligning to contents to the main axis always use jutify-content property
+    Following are the values that can be used.
+    :flex-start - will align elements to the beginning of main axis (left in case of row)
+    :center - to center all contents to center of the container (center to horizontal main axis)
+    :flex-end - will align to the end of the containers main axis (right in case of row)
+    :space-between - will align all elements centered to main axis, but spaced equally between 
+    the elements. In this case both left and right (in case of horizontal axis) space around the elements is not managed.
+    :space-around - In this case space around the elements (in this case left and right) is also equally spaced.
+    */
+    /*align-items:flex-start;
+    /*align-items - To layout items in the cross axis (in this case vertical axis) we use
+    the align-items property
+    :stretch - The items will stretch vertically to fill the most amount of size of the container
+    :flex-start - All items will align vertically to the beginning (in this case top) of the cross axis (vertical in this case)
+    :center - All items will align center of the cross axis (vertical in this case) 
+    */
+    /*align-content:center;
+    /* align-content: property is only to be used for multiline
+    flexbox container. The items will shrink to fit the size of container.
+    In conjunction to this, if we use flex-wrap: property and set it to :wrap(flex-wrap: wrap;), 
+    items will wrap on to different lines as per the screen size instead of shrinking
+    their individual sizes
+    */
+    
+}
+
+.flexbox-item{
+    width: 200px;
+    margin: 10px;
+    border: 3px solid black;
+    background-color: lightgray;
+}
+/* To override the positioning and layout properties 
+eg: We can set flex-shrink: 0 (below) to make sure the item-1
+is not shrunk when we reduce the screen size.
+flex-grow: property will force the elements within a container to
+consume the remaining space as per the flex-grow values given to each element.
+important thing to remember here is that if minimum width is 
+given to the flexbox item, then it is used as the base width to compute how much the element will grow.
+if you want to override that and start growing from base width 0,
+then use flex-basis: 0;
+align-self: can be used within each flexbox item to align them to the 
+*/
+.flexbox-item-1{
+    min-height: 100px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    align-self: flex-start;
+
+}
+.flexbox-item-2{
+    min-height: 200px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+.flexbox-item-3{
+    min-height: 300px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
